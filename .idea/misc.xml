@@ -3,9 +3,34 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/genre_item_background.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_back.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_left.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_right.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_explore.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_favorite.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_history.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_home.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/rate_background.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/saas.xml" value="0.1555" />
-        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/activity_main.xml" value="0.1334853090172239" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/activity_main2.xml" value="0.15489130434782608" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/activity_splash.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_category_details.xml" value="0.4" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_dashboard.xml" value="0.10416666666666667" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_history.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_movie_details.xml" value="0.10416666666666667" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_notifications.xml" value="0.10416666666666667" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_profile.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/fragment_search.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/genre_item.xml" value="0.2734375" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/movie_images.xml" value="0.2734375" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/movie_item.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/trending_movie_item.xml" value="0.2734375" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/xml/carousel_scene.xml" value="0.2734375" />
       </map>
     </option>
   </component>

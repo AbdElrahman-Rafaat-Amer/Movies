@@ -1,5 +1,63 @@
 <resources>
     <string name="app_name">Movies</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="top_rated_movies">Top Rated Movies</string>
+    <string name="popular_movies">Popular Movies</string>
+    <string name="upComing_movies">UpComing Movies</string>
+    <string name="genre_name">Action</string>
+    <string name="copy_success"> Name Copied Successfully</string>
+
+    <!--Navigation-->
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_history">History</string>
+    <string name="title_profile">Profile</string>
+    <!--Dummy Data-->
+    <string name="movie_image">Movie Image</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="movie_rate">9.8</string>
+    <string name="dummy_name">What is Lorem Ipsum?</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.</string>
+    <string name="go_back">Back</string>
+    <string name="see_all">see all</string>
+
+    <string-array name="sortBy_values">
+        <item>  popularity Ascending</item>
+        <item>  popularity Descending</item>
+        <item>  release date Ascending</item>
+        <item>  release date Descending</item>
+        <item>  revenue Ascending</item>
+        <item> revenue Descending</item>
+        <item> primary release date Ascending</item>
+        <item> primary release date Descending</item>
+        <item> original title Ascending</item>
+        <item> original title Descending</item>
+        <item> vote average Ascending</item>
+        <item> vote average Descending</item>
+        <item> vote count Ascending</item>
+        <item> vote count Descending</item>
+    </string-array>
+
+    <string-array name="sortBy_entries">
+        <item>popularity.asc</item>
+        <item>popularity.desc</item>
+        <item>release_date.asc</item>
+        <item>release_date.desc</item>
+        <item>revenue.asc</item>
+        <item>revenue.desc</item>
+        <item>primary_release_date.asc</item>
+        <item>primary_release_date.desc</item>
+        <item>original_title.asc</item>
+        <item>original_title.desc</item>
+        <item>vote_average.asc</item>
+        <item>vote_average.desc</item>
+        <item>vote_count.asc</item>
+        <item>vote_count.desc</item>
+    </string-array>
+
 </resources>

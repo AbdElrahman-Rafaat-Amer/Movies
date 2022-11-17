@@ -1,31 +1,45 @@
 package com.abdelrahman.rafaat.movies.model
 
+import com.google.gson.annotations.SerializedName
+
 data class MovieDetails(
     val adult: Boolean,
-    val backdrop_path: String,
-    val belongs_to_collection: BelongsToCollection,
+    @SerializedName("backdrop_path")
+    val backdropPath: String,
+    @SerializedName("belongs_to_collection")
+    val collection: BelongsToCollection,
     val budget: Int,
     val genres: List<Genre>,
     val homepage: String,
     val id: Int,
-    val imdb_id: String,
-    val original_language: String,
-    val original_title: String,
+    @SerializedName("imdb_id")
+    val imdbId: String,
+    @SerializedName("original_language")
+    val originalLanguage: String,
+    @SerializedName("original_title")
+    val originalTitle: String,
     val overview: String,
     val popularity: Double,
-    val poster_path: String,
-    val production_companies: List<ProductionCompany>,
-    val production_countries: List<ProductionCountry>,
-    val release_date: String,
+    @SerializedName("poster_path")
+    val posterPath: String,
+    @SerializedName("production_companies")
+    val productionCompanies: List<ProductionCompany>,
+    @SerializedName("production_countries")
+    val productionCountries: List<ProductionCountry>,
+    @SerializedName("release_date")
+    val releaseDate: String,
     val revenue: Int,
     val runtime: Int,
-    val spoken_languages: List<SpokenLanguage>,
+    @SerializedName("spoken_languages")
+    val spokenLanguages: List<SpokenLanguage>,
     val status: String,
     val tagline: String,
     val title: String,
     val video: Boolean,
-    val vote_average: Double,
-    val vote_count: Int
+    @SerializedName("vote_average")
+    val voteAverage: Double,
+    @SerializedName("vote_count")
+    val voteCount: Int
 )
 
 data class Genre(
@@ -34,26 +48,33 @@ data class Genre(
 )
 
 data class BelongsToCollection(
-    val backdrop_path: String,
+    @SerializedName("backdrop_path")
+    val backdropPath: String,
     val id: Int,
     val name: String,
-    val poster_path: String
+    @SerializedName("poster_path")
+    val posterPath: String
 )
 
 data class ProductionCompany(
     val id: Int,
-    val logo_path: String,
+    @SerializedName("logo_path")
+    val logoPath: String,
     val name: String,
-    val origin_country: String
+    @SerializedName("origin_country")
+    val originCountry: String
 )
 
 data class ProductionCountry(
-    val iso_3166_1: String,
+    @SerializedName("iso_3166_1")
+    val isoCode: String,
     val name: String
 )
 
 data class SpokenLanguage(
-    val english_name: String,
-    val iso_639_1: String,
+    @SerializedName("english_name")
+    val englishName: String,
+    @SerializedName("iso_639_1")
+    val isoCode: String,
     val name: String
 )

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/original_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="240sp"
+        android:contentDescription="@string/movie_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/poster_imageView"
+        android:layout_width="120sp"
+        android:layout_height="170sp"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="130sp"
+        android:contentDescription="@string/movie_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/movieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="9sp"
+        android:text="@string/dummy_name"
+        android:textColor="?colorOnSecondary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/poster_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/original_imageView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
