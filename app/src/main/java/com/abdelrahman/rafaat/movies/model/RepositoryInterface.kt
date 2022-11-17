@@ -5,25 +5,29 @@ import retrofit2.Response
 interface RepositoryInterface {
     suspend fun getCategoryMovies(
         genres: String,
-        sort_by: String,
+        sortBy: String,
         page: String
-    ): Response<MovieQuery>
+    ): Response<MovieResponse>
 
+    suspend fun searchMovie(
+        movieName: String
+    ): Response<MovieResponse>
+
+
+    suspend fun getMovieGenres(): Response<GenreResponse>
 
     suspend fun getTrendingMovie(
         mediaType: String,
         timeWindow: String
-    ): Response<MovieQuery>
+    ): Response<MovieResponse>
 
 
-    suspend fun searchMovie(
-        movieName: String
-    ): Response<MovieQuery>
+    suspend fun getUpcomingMovies(): Response<MovieResponse>
 
+    suspend fun getTopRatedMovies(): Response<MovieResponse>
 
-    suspend fun getMovieDetails(
-        movieId: Long
-    ): Response<MovieDetails>
+    suspend fun getPopularMovies(): Response<MovieResponse>
 
+    suspend fun getMovieDetails(movieId: Long): Response<MovieDetails>
 
 }
