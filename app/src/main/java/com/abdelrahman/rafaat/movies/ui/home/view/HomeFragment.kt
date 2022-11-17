@@ -49,7 +49,9 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         WindowCompat.setDecorFitsSystemWindows(requireActivity().window, false)
+
         checkConnection()
         initUi()
         initRecyclerView()

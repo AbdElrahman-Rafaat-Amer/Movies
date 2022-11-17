@@ -6,7 +6,6 @@ import com.abdelrahman.rafaat.movies.model.MovieResponse
 import retrofit2.Response
 
 
-
 interface RemoteSource {
 
     suspend fun getCategoryMovies(
@@ -16,7 +15,7 @@ interface RemoteSource {
     ): Response<MovieResponse>
 
     suspend fun searchMovie(
-        movieName: String
+        movieName: String, page: Int
     ): Response<MovieResponse>
 
 
