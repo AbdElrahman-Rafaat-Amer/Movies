@@ -1,5 +1,6 @@
 package com.abdelrahman.rafaat.movies.ui.home.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -94,6 +95,15 @@ class HomeViewModel(iRepo: RepositoryInterface) : ViewModel() {
                 }
             }
         }
+    }
+
+    init {
+        Log.i("TestViewModel", "init: ")
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        Log.i("TestViewModel", "onCleared: ")
     }
 
 }

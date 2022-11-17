@@ -28,4 +28,22 @@
         android:name="com.abdelrahman.rafaat.movies.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_genreDetails"
+        android:name="com.abdelrahman.rafaat.movies.ui.genreDetails.view.GenreDetailsFragment"
+        android:label="@string/title_genre"
+        tools:layout="@layout/fragment_category_details" />
+
+    <fragment
+        android:id="@+id/navigation_categoryDetails"
+        android:name="com.abdelrahman.rafaat.movies.ui.categoryDetails.view.CategoryDetailsFragment"
+        android:label="@string/title_category"
+        tools:layout="@layout/fragment_category_details" />
+
+    <fragment
+        android:id="@+id/navigation_movieDetails"
+        android:name="com.abdelrahman.rafaat.movies.ui.moviedetails.MovieDetailsFragment"
+        android:label="@string/title_movieDetails"
+        tools:layout="@layout/fragment_movie_details" />
 </navigation>

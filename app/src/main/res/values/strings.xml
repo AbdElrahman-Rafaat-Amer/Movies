@@ -1,11 +1,19 @@
 <resources>
-    <string name="app_name">Movies</string>
+    <string name="app_name">Filmk</string>
 
     <string name="top_rated_movies">Top Rated Movies</string>
     <string name="popular_movies">Popular Movies</string>
     <string name="upComing_movies">UpComing Movies</string>
     <string name="genre_name">Action</string>
     <string name="copy_success"> Name Copied Successfully</string>
+    <string name="go_back">Back</string>
+    <string name="see_all">see all</string>
+    <string name="title_genre">Genres</string>
+    <string name="title_category">Category</string>
+    <string name="title_movieDetails">movie Details</string>
+    <string name="movie_image_error">movie image unavailable</string>
+    <string name="enable_connection">enable connection</string>
+    <string name="no_data_found">The keyword you entered could not be found,\n Please try another keyword</string>
 
     <!--Navigation-->
     <string name="title_home">Home</string>
@@ -23,8 +31,6 @@
         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
         including versions of Lorem Ipsum.</string>
-    <string name="go_back">Back</string>
-    <string name="see_all">see all</string>
 
     <string-array name="sortBy_values">
         <item>  popularity Ascending</item>

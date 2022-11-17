@@ -1,7 +1,6 @@
 package com.abdelrahman.rafaat.movies.ui.home.adapter
 
 import android.content.Context
-import android.graphics.drawable.BitmapDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -27,9 +26,6 @@ class MovieAdapter(private var itemClickListener: MovieClickListener) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val movie = movies[position]
         holder.onBind(movie, context)
-        holder.itemView.setOnClickListener {
-            itemClickListener.onMovieClick(movie.id)
-        }
     }
 
     override fun getItemCount(): Int {
@@ -46,17 +42,16 @@ class MovieAdapter(private var itemClickListener: MovieClickListener) :
 
         fun onBind(movie: Result, context: Context) {
             Glide.with(context).asBitmap()
-                .load(RetrofitHelper.BASE_IMAGE_URL_API + movie.posterPath).override(200, 270)
+                .load(RetrofitHelper.BASE_IMAGE_W500_URL_API + movie.posterPath).override(200, 270)
                 .placeholder(R.drawable.clapperboard).into(binding.moviePoster)
 
             binding.movieRate.text = movie.voteAverage.toString()
             binding.movieTitle.text = movie.originalTitle
 
             binding.moviePoster.setOnLongClickListener {
-                val bitmapDrawable: BitmapDrawable = binding.moviePoster.drawable as BitmapDrawable
                 itemClickListener.onImageLongClick(
-                    bitmapDrawable.bitmap,
-                    binding.movieTitle.text.toString()
+                    imageLink = RetrofitHelper.BASE_IMAGE_W500_URL_API + movie.posterPath,
+                    movieName = binding.movieTitle.text.toString()
                 )
                 true
             }
@@ -64,6 +59,10 @@ class MovieAdapter(private var itemClickListener: MovieClickListener) :
             binding.movieTitle.setOnLongClickListener {
                 itemClickListener.onNameLongClick(binding.movieTitle.text.toString())
                 true
+            }
+
+            binding.moviePoster.setOnClickListener {
+                itemClickListener.onMovieClick(movie.id)
             }
         }
 
