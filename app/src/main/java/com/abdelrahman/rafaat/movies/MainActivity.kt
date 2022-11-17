@@ -3,7 +3,6 @@ package com.abdelrahman.rafaat.movies
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.WindowCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.abdelrahman.rafaat.movies.databinding.ActivityMainBinding

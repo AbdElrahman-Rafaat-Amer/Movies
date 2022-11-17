@@ -41,6 +41,7 @@ class TrendingAdapter(private var itemClickListener: MovieClickListener) :
     fun setList(movies: List<Result>) {
         this.movies = movies
         notifyDataSetChanged()
+
     }
 
     inner class ViewHolder(private val binding: TrendingMovieItemBinding) :
@@ -48,14 +49,32 @@ class TrendingAdapter(private var itemClickListener: MovieClickListener) :
 
         fun onBind(movie: Result, context: Context) {
             Glide.with(context)
-                .load(RetrofitHelper.BASE_IMAGE_URL_API + movie.posterPath)
+                .load(RetrofitHelper.BASE_IMAGE_W500_URL_API + movie.posterPath)
                 .placeholder(R.drawable.clapperboard).into(binding.posterImageView)
 
             Glide.with(context)
-                .load(RetrofitHelper.BASE_IMAGE_W500_URL_API + movie.backdropPath)
+                .load(RetrofitHelper.BASE_IMAGE_URL_ORIGINAL_API + movie.backdropPath)
                 .placeholder(R.drawable.clapperboard).into(binding.originalImageView)
 
             binding.movieTitle.text = movie.originalTitle
+
+            binding.originalImageView.setOnLongClickListener {
+                itemClickListener.onImageLongClick(
+                    imageLink = RetrofitHelper.BASE_IMAGE_URL_ORIGINAL_API + movie.backdropPath,
+                    movieName = binding.movieTitle.text.toString()
+                )
+                true
+            }
+
+            binding.movieTitle.setOnLongClickListener {
+                itemClickListener.onNameLongClick(binding.movieTitle.text.toString())
+                true
+            }
+
+            binding.originalImageView.setOnClickListener {
+                itemClickListener.onMovieClick(movie.id)
+            }
+
         }
 
     }

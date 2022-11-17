@@ -28,6 +28,10 @@
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/genre_item.xml" value="0.2734375" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/movie_images.xml" value="0.2734375" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/movie_item.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/no_connection_view.xml" value="0.264" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/no_data_view.xml" value="0.2" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/shimmer_animation_layout.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/shimmer_placeholder_layout.xml" value="0.15489130434782608" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/layout/trending_movie_item.xml" value="0.2734375" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/xml/carousel_scene.xml" value="0.2734375" />
