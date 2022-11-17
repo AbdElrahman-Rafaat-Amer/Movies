@@ -11,12 +11,13 @@ import retrofit2.http.Query
 interface MovieService {
 
     @GET("discover/movie")
-    suspend fun getCategoryMovies(
+    suspend fun getGenreDetails(
         @Query("with_genres") with_genres: String,
         @Query("sort_by") sort_by: String,
         @Query("page") page: String,
         @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
     ): Response<MovieResponse>
+
 
     @GET("search/movie")
     suspend fun searchMovie(
@@ -33,23 +34,27 @@ interface MovieService {
     suspend fun getTrendingMovie(
         @Path("media_type") media_type: String,
         @Path("time_window") time_window: String,
-        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add",
+        @Query("page") page: Int = 1
     ): Response<MovieResponse>
 
 
     @GET("movie/upcoming")
     suspend fun getUpcomingMovies(
-        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add",
+        @Query("page") page: Int = 1
     ): Response<MovieResponse>
 
     @GET("movie/top_rated")
     suspend fun getTopRatedMovies(
-        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add",
+        @Query("page") page: Int = 1
     ): Response<MovieResponse>
 
     @GET("movie/popular")
     suspend fun getPopularMovies(
-        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add",
+        @Query("page") page: Int = 1
     ): Response<MovieResponse>
 
     @GET("movie/{movie_id}")

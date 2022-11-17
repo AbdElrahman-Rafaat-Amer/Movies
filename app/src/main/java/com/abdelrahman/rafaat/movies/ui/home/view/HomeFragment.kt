@@ -1,14 +1,12 @@
 package com.abdelrahman.rafaat.movies.ui.home.view
 
+import android.app.DownloadManager
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +14,7 @@ import android.widget.Toast
 import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abdelrahman.rafaat.movies.R
 import com.abdelrahman.rafaat.movies.databinding.FragmentHomeBinding
@@ -24,25 +23,26 @@ import com.abdelrahman.rafaat.movies.ui.home.adapter.*
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModel
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModelFactory
 import com.abdelrahman.rafaat.movies.ui.network.MovieClient
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import com.abdelrahman.rafaat.movies.utils.ConnectionLiveData
+import com.abdelrahman.rafaat.movies.utils.connectInternet
 
 class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var viewModel: HomeViewModel
     private lateinit var trendingAdapter: TrendingAdapter
     private lateinit var genreAdapter: GenreAdapter
     private lateinit var topRatedAdapter: MovieAdapter
     private lateinit var popularAdapter: MovieAdapter
     private lateinit var upComingAdapter: MovieAdapter
+    private val factory by lazy { HomeViewModelFactory(Repository.getInstance(MovieClient.getInstance())) }
+    private val viewModel by lazy {
+        ViewModelProvider(requireActivity(), factory)[HomeViewModel::class.java]
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         binding = FragmentHomeBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -50,10 +50,34 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(requireActivity().window, false)
+        checkConnection()
         initUi()
         initRecyclerView()
-        initViewModel()
-        observeViewModel()
+    }
+
+    private fun checkConnection() {
+        ConnectionLiveData.getInstance(requireContext()).observe(viewLifecycleOwner) {
+            if (it) {
+                binding.shimmerAnimationLayout.root.visibility = View.VISIBLE
+                binding.shimmerAnimationLayout.shimmerFrameLayout.startShimmer()
+                binding.noConnectionView.root.visibility = View.GONE
+
+                callViewModel()
+                observeViewModel()
+            } else {
+                binding.noConnectionView.root.visibility = View.VISIBLE
+                binding.dataContainer.visibility = View.GONE
+                stopAnimation()
+            }
+        }
+    }
+
+    private fun callViewModel() {
+        viewModel.getTrendingMovie("movie", "week")
+        viewModel.getMovieGenres()
+        viewModel.getPopularMovies()
+        viewModel.getTopRatedMovies()
+        viewModel.getUpcomingMovies()
     }
 
     private fun initUi() {
@@ -68,16 +92,23 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
         binding.seeAllPopular.setOnClickListener {
             Toast.makeText(requireContext(), "seeAllPopular", Toast.LENGTH_SHORT)
                 .show()
+            Navigation.findNavController(requireView()).navigate(R.id.navigation_categoryDetails)
         }
 
         binding.seeAllTopRated.setOnClickListener {
             Toast.makeText(requireContext(), "seeAllTopRated", Toast.LENGTH_SHORT)
                 .show()
+            Navigation.findNavController(requireView()).navigate(R.id.navigation_categoryDetails)
         }
 
         binding.seeAllUpComing.setOnClickListener {
             Toast.makeText(requireContext(), "seeAllUpComing", Toast.LENGTH_SHORT)
                 .show()
+            Navigation.findNavController(requireView()).navigate(R.id.navigation_categoryDetails)
+        }
+
+        binding.noConnectionView.enableConnection.setOnClickListener {
+            connectInternet(requireContext())
         }
     }
 
@@ -112,79 +143,70 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
 
     }
 
-
-    private fun initViewModel() {
-        val viewModelFactory = HomeViewModelFactory(
-            Repository.getInstance(MovieClient.getInstance())
-        )
-
-        viewModel = ViewModelProvider(
-            requireActivity(),
-            viewModelFactory
-        )[HomeViewModel::class.java]
-
-        viewModel.getTrendingMovie("movie", "week")
-        viewModel.getMovieGenres()
-        viewModel.getPopularMovies()
-        viewModel.getTopRatedMovies()
-        viewModel.getUpcomingMovies()
-    }
-
     private fun observeViewModel() {
         viewModel.trendingMovies.observe(viewLifecycleOwner) {
-            Log.i("TAGTest", "observeViewModel: size------------->" + it.results.size)
             if (it.results.isNotEmpty()) {
                 trendingAdapter.setList(it.results)
+                binding.dataContainer.visibility = View.VISIBLE
             } else {
                 trendingAdapter.setList(emptyList())
             }
-
+            stopAnimation()
         }
 
         viewModel.movieGenres.observe(viewLifecycleOwner) {
             if (it.isNotEmpty()) {
                 genreAdapter.setList(it)
+                binding.dataContainer.visibility = View.VISIBLE
             } else {
                 genreAdapter.setList(emptyList())
             }
+            stopAnimation()
         }
 
         viewModel.topRatedMovies.observe(viewLifecycleOwner) {
             if (it.results.isNotEmpty()) {
                 topRatedAdapter.setList(it.results)
+                binding.dataContainer.visibility = View.VISIBLE
             } else {
                 topRatedAdapter.setList(emptyList())
             }
+            stopAnimation()
         }
 
         viewModel.popularMovies.observe(viewLifecycleOwner) {
-            Log.i("TAGTest", "observeViewModel: size------------->" + it.results.size)
             if (it.results.isNotEmpty()) {
                 popularAdapter.setList(it.results)
+                binding.dataContainer.visibility = View.VISIBLE
             } else {
                 popularAdapter.setList(emptyList())
             }
+            stopAnimation()
         }
 
-
         viewModel.upComingMovies.observe(viewLifecycleOwner) {
-            Log.i("TAGTest", "observeViewModel: size------------->" + it.results.size)
             if (it.results.isNotEmpty()) {
                 upComingAdapter.setList(it.results)
+                binding.dataContainer.visibility = View.VISIBLE
             } else {
                 upComingAdapter.setList(emptyList())
             }
+            stopAnimation()
         }
 
     }
 
-    override fun onMovieClick(movieId: Int) {
-        Log.i("TestClick", "onMovieClick: movieId------------> $movieId")
+    private fun stopAnimation() {
+        binding.shimmerAnimationLayout.root.visibility = View.GONE
+        binding.shimmerAnimationLayout.shimmerFrameLayout.stopShimmer()
     }
 
-    override fun onImageLongClick(movieImage: Bitmap, movieName: String) {
-        prepareFile(movieImage, movieName)
+    override fun onMovieClick(movieId: Int) {
+        Navigation.findNavController(requireView()).navigate(R.id.navigation_movieDetails)
+    }
 
+    override fun onImageLongClick(imageLink: String, movieName: String) {
+        downloadImage(imageLink, movieName)
     }
 
     override fun onNameLongClick(movieName: String) {
@@ -197,42 +219,16 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
     }
 
     override fun onGenreClick(genreId: Int) {
-        Log.i("TestClick", "onGenreClick: genreId------------> $genreId")
+        Navigation.findNavController(requireView()).navigate(R.id.navigation_genreDetails)
     }
 
-    private fun prepareFile(bitmap: Bitmap, movieName: String) {
-        val file: String =
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).toString()
-
-        val dir = File("$file/Filmk")
-        dir.mkdirs()
-        val outFile = File(dir, "$movieName.png")
-        outFile.exists()
-        try {
-            saveImage(outFile, bitmap)
-            Log.i("SaveImage", "prepareFile: saveImage success")
-            Toast.makeText(requireContext(), "Saved Success", Toast.LENGTH_SHORT).show()
-        } catch (e: IOException) {
-            Log.i("SaveImage", "Exception: IOException" + e.message)
-            Toast.makeText(requireContext(), "Saved failed: " + e.message, Toast.LENGTH_SHORT)
-                .show()
-        }
-    }
-
-    @Throws(IOException::class)
-    private fun saveImage(outFile: File, bitmap: Bitmap) {
-        val outputStream = FileOutputStream(outFile)
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
-        galleryAddPic(outFile.absolutePath)
-        outputStream.flush()
-        outputStream.close()
-    }
-
-    private fun galleryAddPic(pathOfSavedImage: String) {
-        val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
-        val f = File(pathOfSavedImage)
-        val contentUri = Uri.fromFile(f)
-        mediaScanIntent.data = contentUri
-        requireContext().sendBroadcast(mediaScanIntent)
+    private fun downloadImage(imageLink: String, movieName: String) {
+        val manager: DownloadManager =
+            requireContext().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+        val uri = Uri.parse(imageLink)
+        val request = DownloadManager.Request(uri)
+        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_PICTURES, movieName)
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+        manager.enqueue(request)
     }
 }
