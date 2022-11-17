@@ -24,8 +24,8 @@ class MovieClient private constructor() : RemoteSource {
         TODO("Not yet implemented")
     }
 
-    override suspend fun searchMovie(movieName: String): Response<MovieResponse> {
-        TODO("Not yet implemented")
+    override suspend fun searchMovie(movieName: String, page: Int): Response<MovieResponse> {
+        return retrofitHelper.searchMovie(movieName = movieName, page = page)
     }
 
     override suspend fun getMovieGenres(): Response<GenreResponse> {

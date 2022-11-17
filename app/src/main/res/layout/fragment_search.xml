@@ -4,14 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.search.SearchFragment">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/title_search"
-        android:textSize="50sp" />
+    android:layout_marginHorizontal="10sp"
+    tools:context=".ui.search.view.SearchFragment">
 
     <include
         android:id="@+id/no_data_view"
@@ -23,5 +17,53 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/no_connection_view"
+        layout="@layout/no_connection_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_marginEnd="15sp"
+        android:autofillHints="search"
+        android:background="@drawable/search_background"
+        android:elevation="20dp"
+        android:focusable="true"
+        android:visibility="gone"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toStartOf="@+id/search_filter"
+        app:layout_constraintStart_toStartOf="@+id/search_recyclerView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="@string/search" />
+
+    <ImageView
+        android:id="@+id/search_filter"
+        android:layout_width="45sp"
+        android:layout_height="45sp"
+        android:layout_marginEnd="10sp"
+        android:background="@drawable/filter_background"
+        android:contentDescription="@string/search_filter"
+        android:padding="7sp"
+        android:src="@drawable/filter_search"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/searchView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="15sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

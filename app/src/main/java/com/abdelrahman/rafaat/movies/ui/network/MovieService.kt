@@ -21,7 +21,8 @@ interface MovieService {
 
     @GET("search/movie")
     suspend fun searchMovie(
-        @Query("query") query: String,
+        @Query("query") movieName: String,
+        @Query("page") page: Int = 1,
         @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
     ): Response<MovieResponse>
 

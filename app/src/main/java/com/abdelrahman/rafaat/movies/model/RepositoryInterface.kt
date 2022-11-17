@@ -10,7 +10,7 @@ interface RepositoryInterface {
     ): Response<MovieResponse>
 
     suspend fun searchMovie(
-        movieName: String
+        movieName: String, page: Int
     ): Response<MovieResponse>
 
 

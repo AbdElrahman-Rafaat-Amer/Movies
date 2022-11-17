@@ -31,6 +31,8 @@
         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
         including versions of Lorem Ipsum.</string>
+    <string name="search">enter keywork</string>
+    <string name="search_filter">search filter</string>
 
     <string-array name="sortBy_values">
         <item>  popularity Ascending</item>

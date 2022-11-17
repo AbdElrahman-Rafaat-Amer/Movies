@@ -23,8 +23,8 @@ class Repository private constructor(private var remoteSource: RemoteSource) : R
         TODO("Not yet implemented")
     }
 
-    override suspend fun searchMovie(movieName: String): Response<MovieResponse> {
-        TODO("Not yet implemented")
+    override suspend fun searchMovie(movieName: String, page: Int): Response<MovieResponse> {
+        return remoteSource.searchMovie(movieName, page)
     }
 
     override suspend fun getMovieGenres(): Response<GenreResponse> {
