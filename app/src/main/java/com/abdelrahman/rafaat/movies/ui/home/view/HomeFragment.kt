@@ -1,32 +1,30 @@
 package com.abdelrahman.rafaat.movies.ui.home.view
 
-import android.app.DownloadManager
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.view.WindowCompat
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.abdelrahman.rafaat.movies.R
+import com.abdelrahman.rafaat.movies.base.BaseFragment
 import com.abdelrahman.rafaat.movies.databinding.FragmentHomeBinding
 import com.abdelrahman.rafaat.movies.model.Repository
 import com.abdelrahman.rafaat.movies.ui.home.adapter.*
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModel
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModelFactory
 import com.abdelrahman.rafaat.movies.ui.network.MovieClient
-import com.abdelrahman.rafaat.movies.utils.ConnectionLiveData
 import com.abdelrahman.rafaat.movies.utils.connectInternet
 
-class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
+private var TAG = HomeFragment::class.java.name
+
+class HomeFragment : BaseFragment(), MovieClickListener, GenreClickListener{
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var trendingAdapter: TrendingAdapter
@@ -50,28 +48,8 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(requireActivity().window, false)
-
-        checkConnection()
         initUi()
         initRecyclerView()
-    }
-
-    private fun checkConnection() {
-        ConnectionLiveData.getInstance(requireContext()).observe(viewLifecycleOwner) {
-            if (it) {
-                binding.shimmerAnimationLayout.root.visibility = View.VISIBLE
-                binding.shimmerAnimationLayout.shimmerFrameLayout.startShimmer()
-                binding.noConnectionView.root.visibility = View.GONE
-
-                callViewModel()
-                observeViewModel()
-            } else {
-                binding.noConnectionView.root.visibility = View.VISIBLE
-                binding.dataContainer.visibility = View.GONE
-                stopAnimation()
-            }
-        }
     }
 
     private fun callViewModel() {
@@ -224,13 +202,24 @@ class HomeFragment : Fragment(), MovieClickListener, GenreClickListener {
         Navigation.findNavController(requireView()).navigate(R.id.navigation_genreDetails)
     }
 
-    private fun downloadImage(imageLink: String, movieName: String) {
-        val manager: DownloadManager =
-            requireContext().getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
-        val uri = Uri.parse(imageLink)
-        val request = DownloadManager.Request(uri)
-        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_PICTURES, movieName)
-        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-        manager.enqueue(request)
+
+
+    override fun connected() {
+        super.connected()
+        Log.d(TAG, "connected: ")
+        binding.shimmerAnimationLayout.root.visibility = View.VISIBLE
+        binding.shimmerAnimationLayout.shimmerFrameLayout.startShimmer()
+        binding.noConnectionView.root.visibility = View.GONE
+        callViewModel()
+        observeViewModel()
     }
+
+    override fun disconnected() {
+        super.disconnected()
+        Log.d(TAG, "disconnected: ")
+        binding.noConnectionView.root.visibility = View.VISIBLE
+        binding.dataContainer.visibility = View.GONE
+        stopAnimation()
+    }
+
 }
