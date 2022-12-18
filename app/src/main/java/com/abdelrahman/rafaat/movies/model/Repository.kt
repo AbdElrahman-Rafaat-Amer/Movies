@@ -1,6 +1,6 @@
 package com.abdelrahman.rafaat.movies.model
 
-import com.abdelrahman.rafaat.movies.ui.network.RemoteSource
+import com.abdelrahman.rafaat.movies.network.RemoteSource
 import retrofit2.Response
 
 class Repository private constructor(private var remoteSource: RemoteSource) : RepositoryInterface {
@@ -27,8 +27,22 @@ class Repository private constructor(private var remoteSource: RemoteSource) : R
         return remoteSource.searchMovie(movieName, page)
     }
 
+    override suspend fun discoverMovie(
+        genre: String,
+        sortBy: String,
+        region: String,
+        year: String,
+        page: Int
+    ): Response<MovieResponse> {
+        return remoteSource.discoverMovie(genre, sortBy, region, year, page)
+    }
+
     override suspend fun getMovieGenres(): Response<GenreResponse> {
         return remoteSource.getMovieGenres()
+    }
+
+    override suspend fun getRegions(): Response<List<Region>> {
+        return remoteSource.getRegions()
     }
 
     override suspend fun getTrendingMovie(

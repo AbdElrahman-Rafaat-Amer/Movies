@@ -16,10 +16,10 @@ import com.abdelrahman.rafaat.movies.R
 import com.abdelrahman.rafaat.movies.base.BaseFragment
 import com.abdelrahman.rafaat.movies.databinding.FragmentHomeBinding
 import com.abdelrahman.rafaat.movies.model.Repository
-import com.abdelrahman.rafaat.movies.ui.home.adapter.*
+import com.abdelrahman.rafaat.movies.adapter.*
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModel
 import com.abdelrahman.rafaat.movies.ui.home.viewmodel.HomeViewModelFactory
-import com.abdelrahman.rafaat.movies.ui.network.MovieClient
+import com.abdelrahman.rafaat.movies.network.MovieClient
 import com.abdelrahman.rafaat.movies.utils.connectInternet
 
 private var TAG = HomeFragment::class.java.name

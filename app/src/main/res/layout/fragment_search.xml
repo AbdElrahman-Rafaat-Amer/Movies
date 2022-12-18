@@ -22,13 +22,24 @@
         android:id="@+id/no_connection_view"
         layout="@layout/no_connection_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="?actionBarSize" />
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?actionBarSize"
         android:layout_marginEnd="15sp"
         android:autofillHints="search"
         android:background="@drawable/search_background"
@@ -38,7 +49,7 @@
         app:iconifiedByDefault="false"
         app:layout_constraintEnd_toStartOf="@+id/search_filter"
         app:layout_constraintStart_toStartOf="@+id/search_recyclerView"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline"
         app:queryHint="@string/search" />
 
     <ImageView
@@ -65,5 +76,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView" />
+
+
+<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/search_filter_layout"
+            layout="@layout/fragment_filter_sheet"
+            android:visibility="gone" />
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

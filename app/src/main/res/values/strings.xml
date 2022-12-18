@@ -20,6 +20,17 @@
     <string name="title_search">Search</string>
     <string name="title_history">History</string>
     <string name="title_profile">Profile</string>
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="apply">Apply</string>
+    <string name="reset">Reset</string>
+    <string name="genres">Genres</string>
+    <string name="regions">Regions</string>
+    <string name="sort">Sort</string>
+    <string name="sort_filter"><![CDATA[Sort & Filter]]></string>
+    <string name="year">Year</string>
+
     <!--Dummy Data-->
     <string name="movie_image">Movie Image</string>
     <string name="movie_name">Movie Name</string>
@@ -33,39 +44,47 @@
         including versions of Lorem Ipsum.</string>
     <string name="search">enter keywork</string>
     <string name="search_filter">search filter</string>
+    <string name="allTimes">All times</string>
 
-    <string-array name="sortBy_values">
-        <item>  popularity Ascending</item>
-        <item>  popularity Descending</item>
-        <item>  release date Ascending</item>
-        <item>  release date Descending</item>
-        <item>  revenue Ascending</item>
-        <item> revenue Descending</item>
-        <item> primary release date Ascending</item>
-        <item> primary release date Descending</item>
-        <item> original title Ascending</item>
-        <item> original title Descending</item>
-        <item> vote average Ascending</item>
-        <item> vote average Descending</item>
-        <item> vote count Ascending</item>
-        <item> vote count Descending</item>
-    </string-array>
 
-    <string-array name="sortBy_entries">
-        <item>popularity.asc</item>
-        <item>popularity.desc</item>
-        <item>release_date.asc</item>
-        <item>release_date.desc</item>
-        <item>revenue.asc</item>
-        <item>revenue.desc</item>
-        <item>primary_release_date.asc</item>
-        <item>primary_release_date.desc</item>
-        <item>original_title.asc</item>
-        <item>original_title.desc</item>
-        <item>vote_average.asc</item>
-        <item>vote_average.desc</item>
-        <item>vote_count.asc</item>
-        <item>vote_count.desc</item>
-    </string-array>
+    <string name="popularity"> popularity </string>
+    <string name="release_date">release date </string>
+    <string name="revenue">revenue </string>
+    <string name="original_title">original title </string>
+    <string name="vote_average">vote average </string>
+    <string name="vote_count">vote count </string>
 
+    <!-- <string-array name="sortBy_values">
+         <item> popularity Ascending</item>
+         <item> popularity Descending</item>
+         <item> release date Ascending</item>
+         <item> release date Descending</item>
+         <item> revenue Ascending</item>
+         <item> revenue Descending</item>
+         <item> primary release date Ascending</item>
+         <item> primary release date Descending</item>
+         <item> original title Ascending</item>
+         <item> original title Descending</item>
+         <item> vote average Ascending</item>
+         <item> vote average Descending</item>
+         <item> vote count Ascending</item>
+         <item> vote count Descending</item>
+     </string-array>
+
+     <string-array name="sortBy_entries">
+         <item>popularityAsc</item>
+         <item>popularity.desc</item>
+         <item>release_date.asc</item>
+         <item>release_date.desc</item>
+         <item>revenue.asc</item>
+         <item>revenue.desc</item>
+         <item>primary_release_date.asc</item>
+         <item>primary_release_date.desc</item>
+         <item>original_title.asc</item>
+         <item>original_title.desc</item>
+         <item>vote_average.asc</item>
+         <item>vote_average.desc</item>
+         <item>vote_count.asc</item>
+         <item>vote_count.desc</item>
+     </string-array>-->
 </resources>

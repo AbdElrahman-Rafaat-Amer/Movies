@@ -1,8 +1,6 @@
-package com.abdelrahman.rafaat.movies.ui.network
+package com.abdelrahman.rafaat.movies.network
 
-import com.abdelrahman.rafaat.movies.model.GenreResponse
-import com.abdelrahman.rafaat.movies.model.MovieDetails
-import com.abdelrahman.rafaat.movies.model.MovieResponse
+import com.abdelrahman.rafaat.movies.model.*
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -18,6 +16,21 @@ interface MovieService {
         @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
     ): Response<MovieResponse>
 
+    @GET("discover/movie")
+    suspend fun discoverMovie(
+        @Query("with_genres") with_genres: String,
+        @Query("sort_by") sort_by: String,
+        @Query("region") region: String,
+        @Query("year") year: String,
+        @Query("page") page: String,
+      //  @Query("language") language: String,
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+    ): Response<MovieResponse>
+
+    @GET("configuration/countries")
+    suspend fun getRegions(
+        @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add"
+    ): Response<List<Region>>
 
     @GET("search/movie")
     suspend fun searchMovie(
@@ -61,6 +74,7 @@ interface MovieService {
     @GET("movie/{movie_id}")
     suspend fun getMovieDetails(
         @Path("movie_id") movieId: Long,
+        @Path("language") language: String,
         @Query("api_key") api_key: String = "e36c865102e6b09ab8a428344c7b6add",
         @Query("append_to_response") append_to_response: String = "videos,images,keywords"
     ): Response<MovieDetails>

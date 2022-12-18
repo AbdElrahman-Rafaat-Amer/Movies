@@ -1,4 +1,4 @@
-package com.abdelrahman.rafaat.movies.ui.network
+package com.abdelrahman.rafaat.movies.network
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

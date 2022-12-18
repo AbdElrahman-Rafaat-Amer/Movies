@@ -11,7 +11,6 @@ import androidx.core.view.WindowCompat
 import androidx.fragment.app.Fragment
 import com.abdelrahman.rafaat.movies.utils.ConnectionLiveData
 
-
 private var TAG = BaseFragment::class.java.name
 
 open class BaseFragment : Fragment() {
@@ -35,13 +34,9 @@ open class BaseFragment : Fragment() {
         }
     }
 
-    protected open fun connected() {
-        Log.d(TAG, "connected: Base")
-    }
+    protected open fun connected() {}
 
-    protected open fun disconnected() {
-        Log.d(TAG, "disconnected: Base")
-    }
+    protected open fun disconnected() {}
 
     protected fun downloadImage(imageLink: String, movieName: String) {
         val manager: DownloadManager =

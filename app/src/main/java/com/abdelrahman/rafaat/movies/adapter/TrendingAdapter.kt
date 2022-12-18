@@ -1,4 +1,4 @@
-package com.abdelrahman.rafaat.movies.ui.home.adapter
+package com.abdelrahman.rafaat.movies.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.abdelrahman.rafaat.movies.R
 import com.abdelrahman.rafaat.movies.databinding.TrendingMovieItemBinding
 import com.abdelrahman.rafaat.movies.model.Result
-import com.abdelrahman.rafaat.movies.ui.network.RetrofitHelper
+import com.abdelrahman.rafaat.movies.network.RetrofitHelper
 import com.bumptech.glide.Glide
 
 

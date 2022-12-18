@@ -1,13 +1,17 @@
 package com.abdelrahman.rafaat.movies.ui.moviedetails
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.abdelrahman.rafaat.movies.base.BaseFragment
 import com.abdelrahman.rafaat.movies.databinding.FragmentMovieDetailsBinding
 
-class MovieDetailsFragment : Fragment() {
+private var TAG = MovieDetailsFragment::class.java.name
+
+
+class MovieDetailsFragment : BaseFragment() {
 
     private lateinit var binding: FragmentMovieDetailsBinding
 
@@ -19,4 +23,13 @@ class MovieDetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun connected() {
+        super.connected()
+        Log.i(TAG, "connected: ")
+    }
+
+    override fun disconnected() {
+        super.disconnected()
+        Log.i(TAG, "disconnected: ")
+    }
 }
