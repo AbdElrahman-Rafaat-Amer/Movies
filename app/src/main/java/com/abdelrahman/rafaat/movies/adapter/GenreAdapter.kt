@@ -1,4 +1,4 @@
-package com.abdelrahman.rafaat.movies.ui.home.adapter
+package com.abdelrahman.rafaat.movies.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

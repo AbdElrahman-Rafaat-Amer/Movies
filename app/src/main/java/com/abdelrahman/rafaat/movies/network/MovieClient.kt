@@ -1,8 +1,6 @@
-package com.abdelrahman.rafaat.movies.ui.network
+package com.abdelrahman.rafaat.movies.network
 
-import com.abdelrahman.rafaat.movies.model.GenreResponse
-import com.abdelrahman.rafaat.movies.model.MovieDetails
-import com.abdelrahman.rafaat.movies.model.MovieResponse
+import com.abdelrahman.rafaat.movies.model.*
 import retrofit2.Response
 
 class MovieClient private constructor() : RemoteSource {
@@ -28,8 +26,22 @@ class MovieClient private constructor() : RemoteSource {
         return retrofitHelper.searchMovie(movieName = movieName, page = page)
     }
 
+    override suspend fun discoverMovie(
+        genre: String,
+        sortBy: String,
+        region: String,
+        year: String,
+        page: Int
+    ): Response<MovieResponse> {
+        return retrofitHelper.discoverMovie(genre, sortBy, region, year, page.toString())
+    }
+
     override suspend fun getMovieGenres(): Response<GenreResponse> {
         return retrofitHelper.getMovieGenres()
+    }
+
+    override suspend fun getRegions(): Response<List<Region>> {
+        return retrofitHelper.getRegions()
     }
 
     override suspend fun getTrendingMovie(

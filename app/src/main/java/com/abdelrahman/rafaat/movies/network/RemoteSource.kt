@@ -1,9 +1,9 @@
-package com.abdelrahman.rafaat.movies.ui.network
+package com.abdelrahman.rafaat.movies.network
 
-import com.abdelrahman.rafaat.movies.model.GenreResponse
-import com.abdelrahman.rafaat.movies.model.MovieDetails
-import com.abdelrahman.rafaat.movies.model.MovieResponse
+import com.abdelrahman.rafaat.movies.model.*
 import retrofit2.Response
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 
 interface RemoteSource {
@@ -18,8 +18,17 @@ interface RemoteSource {
         movieName: String, page: Int
     ): Response<MovieResponse>
 
+    suspend fun discoverMovie(
+        genre: String,
+        sortBy: String,
+        region: String,
+        year: String,
+        page: Int
+    ): Response<MovieResponse>
 
     suspend fun getMovieGenres(): Response<GenreResponse>
+
+    suspend fun getRegions(): Response<List<Region>>
 
     suspend fun getTrendingMovie(
         mediaType: String,
@@ -34,5 +43,6 @@ interface RemoteSource {
     suspend fun getPopularMovies(): Response<MovieResponse>
 
     suspend fun getMovieDetails(movieId: Long): Response<MovieDetails>
+
 
 }

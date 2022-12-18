@@ -13,8 +13,17 @@ interface RepositoryInterface {
         movieName: String, page: Int
     ): Response<MovieResponse>
 
+    suspend fun discoverMovie(
+        genre: String,
+        sortBy: String,
+        region: String,
+        year: String,
+        page: Int
+    ): Response<MovieResponse>
 
     suspend fun getMovieGenres(): Response<GenreResponse>
+
+    suspend fun getRegions(): Response<List<Region>>
 
     suspend fun getTrendingMovie(
         mediaType: String,
@@ -29,5 +38,6 @@ interface RepositoryInterface {
     suspend fun getPopularMovies(): Response<MovieResponse>
 
     suspend fun getMovieDetails(movieId: Long): Response<MovieDetails>
+
 
 }

@@ -1,4 +1,4 @@
-package com.abdelrahman.rafaat.movies.ui.home.adapter
+package com.abdelrahman.rafaat.movies.adapter
 
 interface MovieClickListener {
     fun onMovieClick(movieId: Int)
