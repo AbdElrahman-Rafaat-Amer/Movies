@@ -1,6 +1,7 @@
 package com.abdelrahman.rafaat.movies.ui.search.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -104,7 +105,6 @@ class FilterSheetFragment : BottomSheetDialogFragment(), FilterClickListener {
             } else {
                 genreAdapter.setDataSource(emptyList())
             }
-
         }
 
         viewModel.regions.observe(viewLifecycleOwner) {
@@ -113,7 +113,6 @@ class FilterSheetFragment : BottomSheetDialogFragment(), FilterClickListener {
             } else {
                 regionsAdapter.setDataSource(emptyList())
             }
-
         }
     }
 
@@ -128,6 +127,7 @@ class FilterSheetFragment : BottomSheetDialogFragment(), FilterClickListener {
 
     override fun onSortBySelected(sortBy: String) {
         this.sortBy = sortBy
+        Log.i("TestSelection", "SortBy onSortBySelected:-----> $sortBy")
     }
 
     override fun onYearSelected(year: String) {

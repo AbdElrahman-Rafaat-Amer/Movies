@@ -13,6 +13,8 @@
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/filter_background.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/filter_search.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/genre_item_background.xml" value="0.194" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/genre_item_background_red.xml" value="0.1875" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/genre_item_background_white.xml" value="0.1875" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_back.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_left.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_arrow_right.xml" value="0.194" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/ic_star.xml" value="0.215" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/item_background.xml" value="0.215" />
+        <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/item_background_white.xml" value="0.1875" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/line.xml" value="0.1875" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/rate_background.xml" value="0.194" />
         <entry key="..\:/Android/projects/MyProjects/Movies/app/src/main/res/drawable/reset_button_background.xml" value="0.215" />
