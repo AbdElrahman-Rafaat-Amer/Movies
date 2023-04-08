@@ -4,6 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.authentication.AuthenticationActivity">
+    tools:context=".ui.authentication.view.AuthenticationActivity">
+
+    <fragment
+        android:id="@+id/frame"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/auth_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
