@@ -1,5 +1,20 @@
 <resources>
-    <string name="app_name">Filmk</string>
+    <string name="app_name">Mova</string>
+
+
+    <!--    Auth-->
+    <string name="login_your_account">Login to Your Account</string>
+    <string name="create_your_account">Create Your Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forgot_password">Forgot the password?</string>
+    <string name="continue_with">or continue with</string>
+    <string name="do_not_have_account">Don\'t have an account?</string>
+    <string name="have_account">Already have an account?</string>
+
 
     <string name="top_rated_movies">Top Rated Movies</string>
     <string name="popular_movies">Popular Movies</string>
@@ -22,7 +37,6 @@
     <string name="title_profile">Profile</string>
 
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="apply">Apply</string>
     <string name="reset">Reset</string>
     <string name="genres">Genres</string>
@@ -31,17 +45,6 @@
     <string name="sort_filter"><![CDATA[Sort & Filter]]></string>
     <string name="year">Year</string>
 
-    <!--Dummy Data-->
-    <string name="movie_image">Movie Image</string>
-    <string name="movie_name">Movie Name</string>
-    <string name="movie_rate">9.8</string>
-    <string name="dummy_name">What is Lorem Ipsum?</string>
-    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley
-        of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
-        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-        including versions of Lorem Ipsum.</string>
     <string name="search">enter keywork</string>
     <string name="search_filter">search filter</string>
     <string name="allTimes">All times</string>
@@ -53,6 +56,15 @@
     <string name="original_title">original title </string>
     <string name="vote_average">vote average </string>
     <string name="vote_count">vote count </string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
 
     <!-- <string-array name="sortBy_values">
          <item> popularity Ascending</item>
@@ -87,4 +99,17 @@
          <item>vote_count.asc</item>
          <item>vote_count.desc</item>
      </string-array>-->
+
+
+    <!--Dummy Data-->
+    <string name="movie_image">Movie Image</string>
+    <string name="movie_name">Movie Name</string>
+    <string name="movie_rate">9.8</string>
+    <string name="dummy_name">What is Lorem Ipsum?</string>
+    <string name="dummy_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley
+        of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+        electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
+        sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+        including versions of Lorem Ipsum.</string>
 </resources>
