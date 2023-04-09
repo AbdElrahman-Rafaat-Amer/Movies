@@ -116,7 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="@string/forgot_password"
+            android:text="@string/forgot_the_password"
             android:textColor="@color/main_color"
             android:textSize="18sp"
             android:textStyle="bold"
