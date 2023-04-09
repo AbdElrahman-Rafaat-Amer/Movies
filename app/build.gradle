@@ -100,4 +100,7 @@ dependencies {
 
     //Progress Button
     implementation 'br.com.simplepass:loading-button-android:2.2.0'
+
+    //OTPView
+    implementation 'com.github.KevinSchildhorn:OTPView:0.2.5'
 }

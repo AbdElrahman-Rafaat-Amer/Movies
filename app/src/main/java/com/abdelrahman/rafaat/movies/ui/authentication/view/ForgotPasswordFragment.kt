@@ -23,5 +23,19 @@ class ForgotPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setUpUI()
+    }
+
+    private fun setUpUI(){
+
+        binding.smsCardView.setOnClickListener {
+            binding.smsCardView.setBackgroundResource(R.drawable.checkbox_background)
+            binding.emailBackground.setBackgroundResource(R.drawable.background_social)
+        }
+
+        binding.emailBackground.setOnClickListener {
+            binding.emailBackground.setBackgroundResource(R.drawable.checkbox_background)
+            binding.smsCardView.setBackgroundResource(R.drawable.background_social)
+        }
     }
 }
