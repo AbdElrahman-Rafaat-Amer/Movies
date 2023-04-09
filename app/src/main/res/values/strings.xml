@@ -17,7 +17,13 @@
     <string name="continue_with">or continue with</string>
     <string name="do_not_have_account">Don\'t have an account?</string>
     <string name="have_account">Already have an account?</string>
-
+    <string name="via_sms">via SMS:</string>
+    <string name="via_email">via Email:</string>
+    <string name="continue_button">Continue</string>
+    <string name="verify">Verify</string>
+    <string name="code_sent_to">Code has been send to %1$s</string>
+    <string name="resend_code_in">Resend code in %1$s s</string>
+    <string name="crete_new_password">crete New Password</string>
 
     <string name="top_rated_movies">Top Rated Movies</string>
     <string name="popular_movies">Popular Movies</string>
@@ -115,6 +121,6 @@
         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
         including versions of Lorem Ipsum.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
 </resources>
