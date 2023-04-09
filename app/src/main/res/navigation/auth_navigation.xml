@@ -22,8 +22,18 @@
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_signupFragment_to_loginFragment"
+            android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+
+        <action
+            android:id="@+id/action_registerFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.abdelrahman.rafaat.movies.ui.authentication.view.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
 
 </navigation>

@@ -7,10 +7,13 @@
     <string name="create_your_account">Create Your Account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
     <string name="remember_me">Remember me</string>
     <string name="sign_in">Sign in</string>
     <string name="sign_up">Sign up</string>
-    <string name="forgot_password">Forgot the password?</string>
+    <string name="forgot_the_password">Forgot the password?</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="forgot_password_desc">Select which contact details should we use to reset your password</string>
     <string name="continue_with">or continue with</string>
     <string name="do_not_have_account">Don\'t have an account?</string>
     <string name="have_account">Already have an account?</string>
@@ -112,4 +115,6 @@
         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
         including versions of Lorem Ipsum.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
