@@ -121,6 +121,8 @@
         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Lettres
         sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
         including versions of Lorem Ipsum.</string>
+    <string name="dummy_email">abdelrahman.raafaat@gmail.com</string>
+    <string name="dummy_phone_number">01151883341</string>
 
 
 </resources>

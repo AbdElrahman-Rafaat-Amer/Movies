@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.abdelrahman.rafaat.movies.R
 import com.abdelrahman.rafaat.movies.databinding.FragmentLoginBinding
 
@@ -32,6 +33,14 @@ class LoginFragment : Fragment() {
 
         binding.signInButton.setOnClickListener {
             binding.signInButton.startAnimation()
+        }
+
+        binding.signUp.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
+        }
+
+        binding.forgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgotPasswordFragment)
         }
     }
 }

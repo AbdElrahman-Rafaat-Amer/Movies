@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.abdelrahman.rafaat.movies.R
 import com.abdelrahman.rafaat.movies.databinding.FragmentForgotPasswordBinding
 
@@ -30,12 +31,16 @@ class ForgotPasswordFragment : Fragment() {
 
         binding.smsCardView.setOnClickListener {
             binding.smsCardView.setBackgroundResource(R.drawable.checkbox_background)
-            binding.emailBackground.setBackgroundResource(R.drawable.background_social)
+            binding.emailCardView.setBackgroundResource(R.drawable.background_social)
         }
 
-        binding.emailBackground.setOnClickListener {
-            binding.emailBackground.setBackgroundResource(R.drawable.checkbox_background)
+        binding.emailCardView.setOnClickListener {
+            binding.emailCardView.setBackgroundResource(R.drawable.checkbox_background)
             binding.smsCardView.setBackgroundResource(R.drawable.background_social)
+        }
+
+        binding.continueButton.setOnClickListener {
+            findNavController().navigate(R.id.action_forgotPasswordFragment_to_createNewPasswordFragment)
         }
     }
 }

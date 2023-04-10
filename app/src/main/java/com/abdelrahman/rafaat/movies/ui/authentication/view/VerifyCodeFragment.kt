@@ -22,6 +22,12 @@ class VerifyCodeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpUI()
+    }
 
+    private fun setUpUI() {
+        binding.verifyButton.setOnClickListener {
+
+        }
     }
 }
